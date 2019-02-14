@@ -49,7 +49,18 @@ describe('Frame', function() {
     })
   });
 
-  // describe('strike', function() {
-  //
-  // })
+  describe('strike', function() {
+    it('recognises that the player has scored a strike', function() {
+      frame.bowl(10)
+      expect(frame.strike()).toEqual(true)
+    })
+  })
+
+  describe('spare', function() {
+    it('recognises that the player has scored a spare', function() {
+      frame.bowl(5)
+      frame.bowl(5)
+      expect(frame.spare()).toEqual(true)
+    })
+  })
 });

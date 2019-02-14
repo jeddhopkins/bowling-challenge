@@ -24,6 +24,14 @@ Frame.prototype._updateProperties = function (pinsHit) {
   !this.firstBowl ? this.firstBowl = pinsHit : this.secondBowl = pinsHit
 };
 
+Frame.prototype.strike = function () {
+  if (this.firstBowl === 10) { return true }
+};
+
+Frame.prototype.spare = function () {
+  if (this.firstBowl + this.secondBowl === 10) { return true }
+};
+
 // frame function to see if complete?
 // if strike then complete?
 // frame.strike, here or on scorecard?
