@@ -24,11 +24,11 @@ Frame.prototype._updateProperties = function (pinsHit) {
   !this.firstBowl ? this.firstBowl = pinsHit : this.secondBowl = pinsHit
 };
 
-Frame.prototype.strike = function () {
+Frame.prototype.isStrike = function () {
   return (this.firstBowl === 10 && !this.secondBowl) ? true : false ;
 };
 
-Frame.prototype.spare = function () {
+Frame.prototype.isSpare = function () {
   return ((this.firstBowl + this.secondBowl === 10) && (this.secondBowl)) ? true : false ;
 };
 

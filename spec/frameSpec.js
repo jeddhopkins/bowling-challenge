@@ -42,11 +42,11 @@ describe('Frame', function() {
   describe('strike', function() {
     it('recognises that the player has scored a strike', function() {
       frame.bowl(10)
-      expect(frame.strike()).toEqual(true)
+      expect(frame.isStrike()).toEqual(true)
     })
     it('recognises that the player has not scored a strike', function() {
       frame.bowl(9)
-      expect(frame.strike()).toEqual(false)
+      expect(frame.isStrike()).toEqual(false)
     })
   })
 
@@ -54,12 +54,12 @@ describe('Frame', function() {
     it('recognises that the player has scored a spare', function() {
       frame.bowl(6)
       frame.bowl(4)
-      expect(frame.spare()).toEqual(true)
+      expect(frame.isSpare()).toEqual(true)
     })
     it('recognises that the player has not scored a spare', function() {
       frame.bowl(5)
       frame.bowl(4)
-      expect(frame.spare()).toEqual(false)
+      expect(frame.isSpare()).toEqual(false)
     })
   })
 });
