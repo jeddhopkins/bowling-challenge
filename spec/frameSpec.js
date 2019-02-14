@@ -13,25 +13,20 @@ describe('Frame', function() {
     it('the player should not have a score', function() {
       expect(frame.score).toEqual(0);
     });
-    it('the pincount should still be 10', function() {
+    it('the pincount should be 10', function() {
       expect(frame.pincount).toEqual(10)
     })
   });
 
-  describe('player making a bowl', function() {
+  describe('bowl', function() {
     it('can play bowl number one', function() {
       frame.bowl(7);
       expect(frame.firstBowl).toEqual(7)
     });
-    it('the score updates after one bowl', function() {
-      frame.bowl(3);
-      expect(frame.score).toEqual(3)
-    })
-
     it('can play bowl number two', function() {
       frame.bowl(3);
-      frame.bowl(6)
       expect(frame.firstBowl).toEqual(3)
+      frame.bowl(6)
       expect(frame.secondBowl).toEqual(6)
     });
     it('the score updates after each bowl', function() {
@@ -39,6 +34,22 @@ describe('Frame', function() {
       expect(frame.score).toEqual(3);
       frame.bowl(6)
       expect(frame.score).toEqual(9)
+    });
+    it('the pincount updates accordingly after each bowl', function() {
+      frame.bowl(3);
+      expect(frame.pincount).toEqual(7);
+      frame.bowl(6)
+      expect(frame.pincount).toEqual(1)
+    })
+    it('the shotcount increases with every bowl', function() {
+      frame.bowl(3);
+      expect(frame.shotcount).toEqual(1);
+      frame.bowl(6)
+      expect(frame.shotcount).toEqual(2)
     })
   });
+
+  // describe('strike', function() {
+  //
+  // })
 });
