@@ -25,11 +25,11 @@ Frame.prototype._updateProperties = function (pinsHit) {
 };
 
 Frame.prototype.strike = function () {
-  if (this.firstBowl === 10) { return true }
+  return (this.firstBowl === 10 && !this.secondBowl) ? true : false ;
 };
 
 Frame.prototype.spare = function () {
-  if (this.firstBowl + this.secondBowl === 10) { return true }
+  return ((this.firstBowl + this.secondBowl === 10) && (this.secondBowl)) ? true : false ;
 };
 
 // frame function to see if complete?

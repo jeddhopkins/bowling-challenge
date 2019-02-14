@@ -54,6 +54,10 @@ describe('Frame', function() {
       frame.bowl(10)
       expect(frame.strike()).toEqual(true)
     })
+    it('recognises that the player has not scored a strike', function() {
+      frame.bowl(9)
+      expect(frame.strike()).toEqual(false)
+    })
   })
 
   describe('spare', function() {
@@ -61,6 +65,11 @@ describe('Frame', function() {
       frame.bowl(5)
       frame.bowl(5)
       expect(frame.spare()).toEqual(true)
+    })
+    it('recognises that the player has not scored a spare', function() {
+      frame.bowl(5)
+      frame.bowl(4)
+      expect(frame.spare()).toEqual(false)
     })
   })
 });
