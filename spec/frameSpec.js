@@ -19,32 +19,22 @@ describe('Frame', function() {
   });
 
   describe('bowl', function() {
-    it('can play bowl number one', function() {
-      frame.bowl(7);
-      expect(frame.firstBowl).toEqual(7)
+    beforeEach(function() {
+      frame.bowl(4);
+      frame.bowl(6);
     });
-    it('can play bowl number two', function() {
-      frame.bowl(3);
-      expect(frame.firstBowl).toEqual(3)
-      frame.bowl(6)
+
+    it('can play bowls number one & two', function() {
+      expect(frame.firstBowl).toEqual(4)
       expect(frame.secondBowl).toEqual(6)
     });
     it('the score updates after each bowl', function() {
-      frame.bowl(3);
-      expect(frame.score).toEqual(3);
-      frame.bowl(6)
-      expect(frame.score).toEqual(9)
+      expect(frame.score).toEqual(10)
     });
     it('the pincount updates accordingly after each bowl', function() {
-      frame.bowl(3);
-      expect(frame.pincount).toEqual(7);
-      frame.bowl(6)
-      expect(frame.pincount).toEqual(1)
+      expect(frame.pincount).toEqual(0)
     })
     it('the shotcount increases with every bowl', function() {
-      frame.bowl(3);
-      expect(frame.shotcount).toEqual(1);
-      frame.bowl(6)
       expect(frame.shotcount).toEqual(2)
     })
   });
@@ -62,8 +52,8 @@ describe('Frame', function() {
 
   describe('spare', function() {
     it('recognises that the player has scored a spare', function() {
-      frame.bowl(5)
-      frame.bowl(5)
+      frame.bowl(6)
+      frame.bowl(4)
       expect(frame.spare()).toEqual(true)
     })
     it('recognises that the player has not scored a spare', function() {

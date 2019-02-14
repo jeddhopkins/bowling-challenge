@@ -34,5 +34,3 @@ Frame.prototype.spare = function () {
 
 // frame function to see if complete?
 // if strike then complete?
-// frame.strike, here or on scorecard?
-// frame.spare, here or on scorecard?
