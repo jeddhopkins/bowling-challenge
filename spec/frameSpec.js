@@ -39,7 +39,7 @@ describe('Frame', function() {
     })
   });
 
-  describe('strike', function() {
+  describe('isStrike', function() {
     it('recognises that the player has scored a strike', function() {
       frame.bowl(10)
       expect(frame.isStrike()).toEqual(true)
@@ -50,7 +50,7 @@ describe('Frame', function() {
     })
   })
 
-  describe('spare', function() {
+  describe('isSpare', function() {
     it('recognises that the player has scored a spare', function() {
       frame.bowl(6)
       frame.bowl(4)
@@ -64,9 +64,23 @@ describe('Frame', function() {
   })
 
   describe('isOver', function() {
-    it('tells you if the frame is over', function() {
+    it('ends the frame after two 0 bowls', function() {
+      frame.bowl(0)
+      frame.bowl(0)
+      expect(frame.isOver()).toEqual(true)
+    })
+    it('ends the frame after two random bowls', function() {
       frame.bowl(5)
-      frame.bowl(4)
+      frame.bowl(3)
+      expect(frame.isOver()).toEqual(true)
+    })
+    it('ends the frame after a spare', function() {
+      frame.bowl(5)
+      frame.bowl(5)
+      expect(frame.isOver()).toEqual(true)
+    })
+    it('ends the frame after a strike', function() {
+      frame.bowl(10)
       expect(frame.isOver()).toEqual(true)
     })
   })
