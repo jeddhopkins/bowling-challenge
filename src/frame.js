@@ -12,6 +12,13 @@ Frame.prototype.bowl = function (pinsHit) {
   this.shotcount++;
 };
 
+Frame.prototype.isStrike = function () {
+  return this.firstBowl === 10;
+};
+
+Frame.prototype.isSpare = function () {
+  return ((this.firstBowl + this.secondBowl === 10) && (this.secondBowl)) ? true : false ;
+};
 
 Frame.prototype._checkIfLegal = function (pinsHit) {
   if (this.shotcount === 2) { throw new Error ('Cannot exceed 2 shots per frame'); }
@@ -22,14 +29,6 @@ Frame.prototype._updateProperties = function (pinsHit) {
   this.pincount -= pinsHit;
   this.score += pinsHit
   !this.firstBowl ? this.firstBowl = pinsHit : this.secondBowl = pinsHit
-};
-
-Frame.prototype.isStrike = function () {
-  return (this.firstBowl === 10 && !this.secondBowl) ? true : false ;
-};
-
-Frame.prototype.isSpare = function () {
-  return ((this.firstBowl + this.secondBowl === 10) && (this.secondBowl)) ? true : false ;
 };
 
 // frame function to see if complete?

@@ -1,7 +1,13 @@
 function Scorecard() {
 
-  this.frame = [];
+  this.frames = [];
   this.score = 0
+};
+
+Scorecard.prototype.create = function () {
+  for (var i = 0; i < 10; i++) {
+    this.frames.push(new Frame)
+  }
 };
 
 
