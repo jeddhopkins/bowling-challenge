@@ -62,4 +62,12 @@ describe('Frame', function() {
       expect(frame.isSpare()).toEqual(false)
     })
   })
+
+  describe('isOver', function() {
+    it('tells you if the frame is over', function() {
+      frame.bowl(5)
+      frame.bowl(4)
+      expect(frame.isOver()).toEqual(true)
+    })
+  })
 });

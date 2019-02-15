@@ -3,6 +3,8 @@
   <head>
     <link rel="stylesheet" href="style.css">
     <title>Bowling Scorecard</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="scripts/bowlingChallenge-jq.js"></script>
   </head>
   <body>
 
@@ -11,40 +13,42 @@
 
       <table class="center">
       <tr>
-        <td id="frame1shot1">-</td>
-        <td class="sec" id="frame1shot2">-</td>
-        <td id="frame2shot1">-</td>
-        <td class="sec" id="frame2shot2">-</td>
-        <td id="frame3shot1">-</td>
-        <td class="sec" id="frame3shot2">-</td>
-        <td id="frame4shot1">-</td>
-        <td class="sec" id="frame4shot2">-</td>
-        <td id="frame5shot1">-</td>
-        <td class="sec" id="frame5shot2">-</td>
-        <td id="frame6shot1">-</td>
-        <td class="sec" id="frame6shot2">-</td>
-        <td id="frame7shot1">-</td>
-        <td class="sec" id="frame7shot2">-</td>
-        <td id="frame8shot1">-</td>
-        <td class="sec" id="frame8shot2">-</td>
-        <td id="frame9shot1">-</td>
-        <td class="sec" id="frame9shot2">-</td>
-        <td id="frame10shot1">-</td>
-        <td class="sec" id="frame10shot2">-</td>
-        <td class="sec" id="frame10shot3">-</td>
+        <td id="frame1shot1"></td>
+        <td class="sec" id="frame1shot2"></td>
+        <td id="frame2shot1"></td>
+        <td class="sec" id="frame2shot2"></td>
+        <td id="frame3shot1"></td>
+        <td class="sec" id="frame3shot2"></td>
+        <td id="frame4shot1"></td>
+        <td class="sec" id="frame4shot2"></td>
+        <td id="frame5shot1"></td>
+        <td class="sec" id="frame5shot2"></td>
+        <td id="frame6shot1"></td>
+        <td class="sec" id="frame6shot2"></td>
+        <td id="frame7shot1"></td>
+        <td class="sec" id="frame7shot2"></td>
+        <td id="frame8shot1"></td>
+        <td class="sec" id="frame8shot2"></td>
+        <td id="frame9shot1"></td>
+        <td class="sec" id="frame9shot2"></td>
+        <td id="frame10shot1"></td>
+        <td class="sec" id="frame10shot2"></td>
+        <td class="sec" id="frame10shot3"></td>
+        <td class="sec" id="total_header">Total Score</td>
       </tr>
 
       <tr>
-        <td class="total" id="frame1" colspan="2">-</td>
-        <td class="total" id="frame2" colspan="2">-</td>
-        <td class="total" id="frame3" colspan="2">-</td>
-        <td class="total" id="frame4" colspan="2">-</td>
-        <td class="total" id="frame5" colspan="2">-</td>
-        <td class="total" id="frame6" colspan="2">-</td>
-        <td class="total" id="frame7" colspan="2">-</td>
-        <td class="total" id="frame8" colspan="2">-</td>
-        <td class="total" id="frame9" colspan="2">-</td>
-        <td class="total" id="frame10" colspan="3">-</td>
+        <td class="total" id="frame1" colspan="2"></td>
+        <td class="total" id="frame2" colspan="2"></td>
+        <td class="total" id="frame3" colspan="2"></td>
+        <td class="total" id="frame4" colspan="2"></td>
+        <td class="total" id="frame5" colspan="2"></td>
+        <td class="total" id="frame6" colspan="2"></td>
+        <td class="total" id="frame7" colspan="2"></td>
+        <td class="total" id="frame8" colspan="2"></td>
+        <td class="total" id="frame9" colspan="2"></td>
+        <td class="total" id="frame10" colspan="3"></td>
+        <td class="total" id="total_score" colspan="3"></td>
       </tr>
 
       </td>
@@ -53,19 +57,22 @@
       <br>
 
       <form>
-        <button class="buttons" id="enter0">0<value="submit">
-        <button class="buttons" id="enter1">1<value="submit">
-        <button class="buttons" id="enter2">2<value="submit">
-        <button class="buttons" id="enter3">3<value="submit">
-        <button class="buttons" id="enter4">4<value="submit">
-        <button class="buttons" id="enter5">5<value="submit">
-        <button class="buttons" id="enter6">6<value="submit">
-        <button class="buttons" id="enter7">7<value="submit">
-        <button class="buttons" id="enter8">8<value="submit">
-        <button class="buttons" id="enter9">9<value="submit">
-        <button class="buttons" id="enter10">10<value="submit">
+        <input class="buttons" id="enter0" type="button" value="0">
+        <input class="buttons" id="enter1" type="button" value="1">
+        <input class="buttons" id="enter2" type="button" value="2">
+        <input class="buttons" id="enter3" type="button" value="3">
+        <input class="buttons" id="enter4" type="button" value="4">
+        <input class="buttons" id="enter5" type="button" value="5">
+        <input class="buttons" id="enter6" type="button" value="6">
+        <input class="buttons" id="enter7" type="button" value="7">
+        <input class="buttons" id="enter8" type="button" value="8">
+        <input class="buttons" id="enter9" type="button" value="9">
+        <input class="buttons" id="enter10" type="button" value="10">
       </form>
      </section>
+
+     <script src='src/frame.js'></script>
+     <script src='src/scorecard.js'></script>
 
   </body>
 </html>
