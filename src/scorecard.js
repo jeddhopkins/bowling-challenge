@@ -11,16 +11,18 @@ Scorecard.prototype.create = function () {
 };
 
 Scorecard.prototype.updateScore = function () {
-  // for (var i = 0; i < this.frames.length; i++) { this.score += this.frame[i].score }
-  for (var i = 0; i < this.frames.length; i++) {
-   this.score += this.frames[i].score
-  }
+  var totalFrameScore = 0
+  for (var n = 0; n < this.frames.length; n++) {
+    if (this.frames[n].isOver() === true) {
+      totalFrameScore += this.frames[n].score
+    }
+  };
+  this.score = totalFrameScore
 };
 
 Scorecard.prototype.haveGo = function (pinsHit) {
   for (var i = 0; i < this.frames.length;) {
     if (this.frames[i].firstBowl === null) {
-      console.log("hi");
       this.frames[i].bowl(pinsHit)
       break
   } else if (this.frames[i].secondBowl === null) {
