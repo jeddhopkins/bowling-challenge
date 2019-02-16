@@ -10,8 +10,24 @@ Scorecard.prototype.create = function () {
   }
 };
 
+Scorecard.prototype.extraRollOne = function (i) {
+  return this.frames[i+1].firstBowl
+};
+
+Scorecard.prototype.extraRollTwo = function (i) {
+  return this.frames[i+1].secondBowl || this.frames[i+2].firstBowl
+};
+
+Scorecard.prototype.spareBonus = function (i) {
+  if (this.frames[i].isSpare) { this.frames[i].score += this.extraRollOne(i) }
+};
+
+Scorecard.prototype.strikeBonus = function (i) {
+  if (this.frames[i].isStrike) { this.frames[i].score += (this.extraRollOne(i) + this.extraRollTwo(i)) }
+};
+
 Scorecard.prototype.haveGo = function (pinsHit) {
-  for (var i = 0; i < this.frames.length;) {
+  for (var i = 0; i < this.frames.length; i++) {
     if (this.frames[i].firstBowl === null) {
       this.frames[i].bowl(pinsHit)
       break
@@ -22,7 +38,6 @@ Scorecard.prototype.haveGo = function (pinsHit) {
         break
       }
     }
-    i++
   }
   this._updateScore()
 };
