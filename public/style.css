@@ -82,6 +82,12 @@ td#frame10shot3 {
   transition-duration: 0.4s;
   cursor: pointer;
 }
+
+.buttons#restartGame {
+  height: 60px;
+  width: 190px;
+}
+
 .buttons:hover {
   background-color: white;
   color: black;
