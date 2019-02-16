@@ -21,7 +21,7 @@ body {
 h1 {
   font-size: 75px;
   color: #ff9900;
-  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
 }
 
@@ -68,7 +68,7 @@ td#frame10shot3 {
 
 .buttons {
   border-color: black;
-  border-width: 5px;
+  border-width: 3.5px;
   font-family: 'Fontdiner Swanky', cursive;
   margin-top: 30px;
   margin-right: 10px;

@@ -8,83 +8,80 @@
     <link href="https://fonts.googleapis.com/css?family=Fontdiner+Swanky" rel="stylesheet">
   </head>
   <body>
+  <h1>Bedrock 10 Pin Bowling</h1>
 
-    <section id="centralsection">
-    <h1>Bedrock 10 Pin Bowling</h1>
-
-    <table class="centreTable">
-    <thead>
-      <tr>
-        <th scope="col" colspan="2">1</th>
-        <th scope="col" colspan="2">2</th>
-        <th scope="col" colspan="2">3</th>
-        <th scope="col" colspan="2">4</th>
-        <th scope="col" colspan="2">5</th>
-        <th scope="col" colspan="2">6</th>
-        <th scope="col" colspan="2">7</th>
-        <th scope="col" colspan="2">8</th>
-        <th scope="col" colspan="2">9</th>
-        <th scope="col" colspan="3">10</th>
-        <th scope="col" colspan="1">total</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td scope="row" id='frame1shot1' class='rolls'></td>
-        <td scope="row" id='frame1shot2' class='rolls'></td>
-        <td scope="row" id='frame2shot1' class='rolls'></td>
-        <td scope="row" id='frame2shot2' class='rolls'></td>
-        <td scope="row" id='frame3shot1' class='rolls'></td>
-        <td scope="row" id='frame3shot2' class='rolls'></td>
-        <td scope="row" id='frame4shot1' class='rolls'></td>
-        <td scope="row" id='frame4shot2' class='rolls'></td>
-        <td scope="row" id='frame5shot1' class='rolls'></td>
-        <td scope="row" id='frame5shot2' class='rolls'></td>
-        <td scope="row" id='frame6shot1' class='rolls'></td>
-        <td scope="row" id='frame6shot2' class='rolls'></td>
-        <td scope="row" id='frame7shot1' class='rolls'></td>
-        <td scope="row" id='frame7shot2' class='rolls'></td>
-        <td scope="row" id='frame8shot1' class='rolls'></td>
-        <td scope="row" id='frame8shot2' class='rolls'></td>
-        <td scope="row" id='frame9shot1' class='rolls'></td>
-        <td scope="row" id='frame9shot2' class='rolls'></td>
-        <td scope="row" id='frame10shot1' class='rolls'></td>
-        <td scope="row" id='frame10shot2' class='rolls'></td>
-        <td scope="row" id='frame10shot3' class='rolls'></td>
-        <td rowspan="2" id="total_score"></td>
-      </tr>
-      <tr>
-        <td scope="row" colspan="2" id='frame1' class='frames'></td>
-        <td scope="row" colspan="2" id='frame2' class='frames'></td>
-        <td scope="row" colspan="2" id='frame3' class='frames'></td>
-        <td scope="row" colspan="2" id='frame4' class='frames'></td>
-        <td scope="row" colspan="2" id='frame5' class='frames'></td>
-        <td scope="row" colspan="2" id='frame6' class='frames'></td>
-        <td scope="row" colspan="2" id='frame7' class='frames'></td>
-        <td scope="row" colspan="2" id='frame8' class='frames'></td>
-        <td scope="row" colspan="2" id='frame9' class='frames'></td>
-        <td scope="row" colspan="3" id='frame10' class='frames'></td>
-      </tr>
-    </tbody>
+  <table class="centreTable">
+  <thead>
+    <tr>
+      <th scope="col" colspan="2">1</th>
+      <th scope="col" colspan="2">2</th>
+      <th scope="col" colspan="2">3</th>
+      <th scope="col" colspan="2">4</th>
+      <th scope="col" colspan="2">5</th>
+      <th scope="col" colspan="2">6</th>
+      <th scope="col" colspan="2">7</th>
+      <th scope="col" colspan="2">8</th>
+      <th scope="col" colspan="2">9</th>
+      <th scope="col" colspan="3">10</th>
+      <th scope="col" colspan="1">total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row" id='frame1shot1' class='rolls'></td>
+      <td scope="row" id='frame1shot2' class='rolls'></td>
+      <td scope="row" id='frame2shot1' class='rolls'></td>
+      <td scope="row" id='frame2shot2' class='rolls'></td>
+      <td scope="row" id='frame3shot1' class='rolls'></td>
+      <td scope="row" id='frame3shot2' class='rolls'></td>
+      <td scope="row" id='frame4shot1' class='rolls'></td>
+      <td scope="row" id='frame4shot2' class='rolls'></td>
+      <td scope="row" id='frame5shot1' class='rolls'></td>
+      <td scope="row" id='frame5shot2' class='rolls'></td>
+      <td scope="row" id='frame6shot1' class='rolls'></td>
+      <td scope="row" id='frame6shot2' class='rolls'></td>
+      <td scope="row" id='frame7shot1' class='rolls'></td>
+      <td scope="row" id='frame7shot2' class='rolls'></td>
+      <td scope="row" id='frame8shot1' class='rolls'></td>
+      <td scope="row" id='frame8shot2' class='rolls'></td>
+      <td scope="row" id='frame9shot1' class='rolls'></td>
+      <td scope="row" id='frame9shot2' class='rolls'></td>
+      <td scope="row" id='frame10shot1' class='rolls'></td>
+      <td scope="row" id='frame10shot2' class='rolls'></td>
+      <td scope="row" id='frame10shot3' class='rolls'></td>
+      <td rowspan="2" id="total_score"></td>
+    </tr>
+    <tr>
+      <td scope="row" colspan="2" id='frame1' class='frames'></td>
+      <td scope="row" colspan="2" id='frame2' class='frames'></td>
+      <td scope="row" colspan="2" id='frame3' class='frames'></td>
+      <td scope="row" colspan="2" id='frame4' class='frames'></td>
+      <td scope="row" colspan="2" id='frame5' class='frames'></td>
+      <td scope="row" colspan="2" id='frame6' class='frames'></td>
+      <td scope="row" colspan="2" id='frame7' class='frames'></td>
+      <td scope="row" colspan="2" id='frame8' class='frames'></td>
+      <td scope="row" colspan="2" id='frame9' class='frames'></td>
+      <td scope="row" colspan="3" id='frame10' class='frames'></td>
+    </tr>
+  </tbody>
   </table><br>
 
-    <form>
-      <input class="buttons" id="enter0" type="button" value="0">
-      <input class="buttons" id="enter1" type="button" value="1">
-      <input class="buttons" id="enter2" type="button" value="2">
-      <input class="buttons" id="enter3" type="button" value="3">
-      <input class="buttons" id="enter4" type="button" value="4">
-      <input class="buttons" id="enter5" type="button" value="5">
-      <input class="buttons" id="enter6" type="button" value="6">
-      <input class="buttons" id="enter7" type="button" value="7">
-      <input class="buttons" id="enter8" type="button" value="8">
-      <input class="buttons" id="enter9" type="button" value="9">
-      <input class="buttons" id="enter10" type="button" value="10">
-    </form>
-    </section>
+  <form>
+    <input class="buttons" id="enter0" type="button" value="0">
+    <input class="buttons" id="enter1" type="button" value="1">
+    <input class="buttons" id="enter2" type="button" value="2">
+    <input class="buttons" id="enter3" type="button" value="3">
+    <input class="buttons" id="enter4" type="button" value="4">
+    <input class="buttons" id="enter5" type="button" value="5">
+    <input class="buttons" id="enter6" type="button" value="6">
+    <input class="buttons" id="enter7" type="button" value="7">
+    <input class="buttons" id="enter8" type="button" value="8">
+    <input class="buttons" id="enter9" type="button" value="9">
+    <input class="buttons" id="enter10" type="button" value="10">
+  </form>
 
-    <script src='src/frame.js'></script>
-    <script src='src/scorecard.js'></script>
+  <script src='src/frame.js'></script>
+  <script src='src/scorecard.js'></script>
 
   </body>
 </html>
