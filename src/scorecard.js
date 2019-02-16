@@ -10,16 +10,6 @@ Scorecard.prototype.create = function () {
   }
 };
 
-Scorecard.prototype.updateScore = function () {
-  var totalFrameScore = 0
-  for (var n = 0; n < this.frames.length; n++) {
-    if (this.frames[n].isOver() === true) {
-      totalFrameScore += this.frames[n].score
-    }
-  };
-  this.score = totalFrameScore
-};
-
 Scorecard.prototype.haveGo = function (pinsHit) {
   for (var i = 0; i < this.frames.length;) {
     if (this.frames[i].firstBowl === null) {
@@ -34,7 +24,19 @@ Scorecard.prototype.haveGo = function (pinsHit) {
     }
     i++
   }
+  this._updateScore()
 };
+
+Scorecard.prototype._updateScore = function () {
+  var totalFrameScore = 0
+  for (var n = 0; n < this.frames.length; n++) {
+    if (this.frames[n].isOver() === true) {
+      totalFrameScore += this.frames[n].score
+    }
+  };
+  this.score = totalFrameScore
+};
+
 // function that adds scores
 // keeps track of frames, make new frames with array objects attached?
 // game over function

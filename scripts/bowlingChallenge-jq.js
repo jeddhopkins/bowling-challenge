@@ -5,77 +5,66 @@ $(document).ready(function() {
 
   $('#enter0').on('click', function() {
     scorecard.haveGo(0)
-    scorecard.updateScore()
     updateBowls()
     updateScores()
   })
 
   $('#enter1').on('click', function() {
     scorecard.haveGo(1)
-    scorecard.updateScore()
     updateBowls()
     updateScores()
   })
 
   $('#enter2').on('click', function() {
     scorecard.haveGo(2)
-    scorecard.updateScore()
     updateBowls()
     updateScores()
   })
 
   $('#enter3').on('click', function() {
     scorecard.haveGo(3)
-    scorecard.updateScore()
     updateBowls()
     updateScores()
   })
 
   $('#enter4').on('click', function() {
     scorecard.haveGo(4)
-    scorecard.updateScore()
     updateBowls()
     updateScores()
   })
 
   $('#enter5').on('click', function() {
     scorecard.haveGo(5)
-    scorecard.updateScore()
     updateBowls()
     updateScores()
   })
 
   $('#enter6').on('click', function() {
     scorecard.haveGo(6)
-    scorecard.updateScore()
     updateBowls()
     updateScores()
   })
 
   $('#enter7').on('click', function() {
     scorecard.haveGo(7)
-    scorecard.updateScore()
     updateBowls()
     updateScores()
   })
 
   $('#enter8').on('click', function() {
     scorecard.haveGo(8)
-    scorecard.updateScore()
     updateBowls()
     updateScores()
   })
 
   $('#enter9').on('click', function() {
     scorecard.haveGo(9)
-    scorecard.updateScore()
     updateBowls()
     updateScores()
   })
 
   $('#enter10').on('click', function() {
     scorecard.haveGo(10)
-    scorecard.updateScore()
     updateBowls()
     updateScores()
   })
