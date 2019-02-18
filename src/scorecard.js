@@ -19,15 +19,13 @@ Scorecard.prototype.extraRollOne = function (i) {
 };
 
 Scorecard.prototype.extraRollTwo = function (i) {
-  if ((this.frames[i+1].secondBowl && this.frames[i+2].firstBowl) === null) {
-    return 0
-} else {
-    if ((this.frames[i+1].secondBowl === null)) {
+    if (this.frames[i+1].secondBowl === null) {
+      console.log('1');
       return this.frames[i+2].firstBowl
   } else {
+    console.log('2');
       return this.frames[i+1].secondBowl
     }
-  }
 };
 
 Scorecard.prototype.spareBonus = function (i) {
