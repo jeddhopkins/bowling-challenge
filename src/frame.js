@@ -4,8 +4,6 @@ function Frame() {
   this.secondBowl = null;
   this.shotcount = 0;
   this.score = 0;
-  this.bonus = 0;
-  this.bonusBowl = null;
 };
 
 Frame.prototype.bowl = function (pinsHit) {
@@ -15,17 +13,27 @@ Frame.prototype.bowl = function (pinsHit) {
 };
 
 Frame.prototype.isOver = function () {
-  if (this.isStrike()) { return true }
-  if (this.isSpare()) { return true }
-  if (this.shotcount === 2) { return true }
+  if (this.isStrike() === true) { return true }
+  else if (this.isSpare() === true) { return true }
+  else if (this.shotcount === 2) { return true }
+  else { return false }
+
 };
 
 Frame.prototype.isSpare = function () {
-  return ((this.firstBowl + this.secondBowl === 10) && (this.secondBowl)) ? true : false ;
+  if ((this.firstBowl + this.secondBowl === 10) && (typeof this.secondBowl === 'number')) {
+    return true
+  } else {
+    return false
+  }
 };
 
 Frame.prototype.isStrike = function () {
-  return this.firstBowl === 10;
+  if (this.firstBowl === 10) {
+    return true
+  } else {
+    return false
+  }
 };
 
 Frame.prototype._checkIfLegal = function (pinsHit) {
@@ -34,6 +42,6 @@ Frame.prototype._checkIfLegal = function (pinsHit) {
 
 Frame.prototype._updateProperties = function (pinsHit) {
   this.pincount -= pinsHit;
-  this.score += pinsHit
-  this.firstBowl === null ? this.firstBowl = pinsHit : this.secondBowl = pinsHit
+  this.score += pinsHit;
+  (this.firstBowl === null) ? (this.firstBowl = pinsHit) : (this.secondBowl = pinsHit)
 };

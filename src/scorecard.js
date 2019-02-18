@@ -11,40 +11,67 @@ Scorecard.prototype.create = function () {
 };
 
 Scorecard.prototype.extraRollOne = function (i) {
-  return this.frames[i+1].firstBowl
+  if (this.frames[i+1].firstBowl === null) {
+    return 0
+} else {
+    return this.frames[i+1].firstBowl
+  }
 };
 
 Scorecard.prototype.extraRollTwo = function (i) {
-  return this.frames[i+1].secondBowl || this.frames[i+2].firstBowl
+  if ((this.frames[i+1].secondBowl && this.frames[i+2].firstBowl) === null) {
+    return 0
+} else {
+    if ((this.frames[i+1].secondBowl === null)) {
+      return this.frames[i+2].firstBowl
+  } else {
+      return this.frames[i+1].secondBowl
+    }
+  }
 };
 
 Scorecard.prototype.spareBonus = function (i) {
-  if (this.frames[i].isSpare) { this.frames[i].score += this.extraRollOne(i) }
+  if (this.frames[i].isSpare() === true) { this.frames[i].score += this.extraRollOne(i) }
 };
 
 Scorecard.prototype.strikeBonus = function (i) {
-  if (this.frames[i].isStrike) { this.frames[i].score += (this.extraRollOne(i) + this.extraRollTwo(i)) }
+  if (this.frames[i].isStrike() === true) { this.frames[i].score += (this.extraRollOne(i) + this.extraRollTwo(i)) }
+};
+
+Scorecard.prototype.updateFrameScore = function () {
+  for (var i = 0; i < (this.frames.length); i++) {
+    this.spareBonus(i);
+    this.strikeBonus(i);
+  }
 };
 
 Scorecard.prototype.haveGo = function (pinsHit) {
-  for (var i = 0; i < this.frames.length; i++) {
+  this._resetFrameScores()
+  for (var i = 0; i < (this.frames.length); i++) {
     if (this.frames[i].firstBowl === null) {
       this.frames[i].bowl(pinsHit)
       break
   } else if (this.frames[i].secondBowl === null) {
-      if (this.frames[i].isOver() === true) {
-      } else {
+      if (this.frames[i].isOver() === false) {
         this.frames[i].bowl(pinsHit)
         break
       }
     }
   }
-  this._updateScore()
+  this.updateFrameScore()
+  this._updateTotalScore()
 };
 
-Scorecard.prototype._updateScore = function () {
+Scorecard.prototype._resetFrameScores = function () {
+  for (var i = 0; i < (this.frames.length); i++) {
+    this.frames[i].score = 0
+    this.frames[i].score = (this.frames[i].firstBowl + this.frames[i].secondBowl)
+  }
+};
+
+Scorecard.prototype._updateTotalScore = function () {
   var totalFrameScore = 0
-  for (var n = 0; n < this.frames.length; n++) {
+  for (var n = 0; n < (this.frames.length); n++) {
     if (this.frames[n].isOver() === true) {
       totalFrameScore += this.frames[n].score
     }
